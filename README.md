@@ -1,18 +1,14 @@
-# Redux toolkit contact card
+# React crypto
 
-redux-toolkit-contact-card is a simple contact card crud app.
-
-# Introduction
-
-This is a simple contacts card app build with React, Typescript and redux-toolkit . Thank you for your visit and I am looking forward to hearing from you!
+react-crypto is a simple Cryptocurrency dashboard build with React, Typescript, Websockets powered by RapidAPI and CryptoCompare API
 
 # Installation Instructions
 
 Clone the repository, change directories, and use NPM to install the dependencies.
 
 ```bash
-$ git clone https://github.com/rogerndutiye/redux-toolkit-contact-card.git
-$ cd redux-toolkit-contact-card
+$ git clone https://github.com/rogerndutiye/react-crypto.git
+$ cd react-crypto
 $ npm install
 ```
 
@@ -31,8 +27,10 @@ You will also see any lint errors in the console.
 
 ## Screenshots
 
-![screenshot #1](src/assets/images/contacts-page.png)
+![screenshot #1](src/img/home.png)
 
-![screenshot #1](src/assets/images/add-contat.png)
+![screenshot #1](src/img/search.png)
 
-![screenshot #1](src/assets/images/edit-contact.png)
+![screenshot #1](src/img/detail.png)
+
+![screenshot #1](src/img/more.png)
