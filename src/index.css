@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.crypto-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.crypto-actions .active,
+.crypto-actions button:active,
+.crypto-actions button:hover {
+  color: #1f90ff;
+}
+.crypto-actions button {
+  border: none;
+  background: none;
+  margin-top: 2em;
+  font-size: 1em;
+  padding: 0 1em;
+  color: hsla(0, 0%, 100%, 0.7);
+  cursor: pointer;
+}
+
+.line-chart {
+  margin-top: 2em;
+}
+.line-chart .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.chart-price {
+  color: #fff;
+  font-weight: 500;
+  margin-left: 0.5em;
+}
+.line-chart h5:last-child {
+  font-size: 1.2em;
+  color: hsla(0, 0%, 84.7%, 0.865);
+  margin-right: 0.5em;
+}
+
+.columns {
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -0.4rem;
+  margin-right: -0.4rem;
+}
+.crypto-data .tab-block {
+  border: none;
+}
+.tab {
+  align-items: center;
+  border-bottom: 0.05rem solid #dadee4;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0.2rem 0 0.15rem;
+}
+
+.tab.tab-block .tab-item {
+  -ms-flex: 1 0 0;
+  flex: 1 0;
+  text-align: center;
+}
+
+.crypto-data .tab-item {
+  padding-bottom: 1em;
+  color: hsla(0, 0%, 100%, 0.7);
+  text-transform: uppercase;
+  font-weight: 200;
+  border-bottom: 1px solid rgba(56, 62, 70, 0.4);
+  cursor: pointer;
+}
+
+.tab .tab-item {
+  margin-top: 0;
+}
+
+.tab .tab-item.active a,
+.tab .tab-item a.active {
+  border-bottom-color: #5755d9;
+  color: #5755d9;
+}
+
+.crypto-data .react-tabs__tab--selected {
+  color: #1f90ff;
+  padding-bottom: 1em;
+  border-bottom: 1px solid;
+}
+
+.spinner-5 {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-right-color: #25b09b;
+  animation: s5 1s infinite linear;
+}
+.spinner-5::before,
+.spinner-5::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: s5 2s infinite;
+}
+.spinner-5::after {
+  margin: 8px;
+  animation-duration: 3s;
+}
+
+@keyframes s5 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.spinner-6 {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-color: #1e3a8a #0000;
+  animation: s6 1s infinite linear;
+}
+.spinner-6::before,
+.spinner-6::after {
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+}
+.spinner-6::before {
+  border-color: #34d399 #0000;
+  animation: inherit;
+  animation-duration: 0.5s;
+  animation-direction: reverse;
+}
+.spinner-6::after {
+  margin: 8px;
+}
+
+@keyframes s6 {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.crypto-data .news {
+  margin: 1em;
+  flex: 43% 1;
+  min-height: 270px;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.crypto-data .news .meta-news-data {
+  display: flex;
+  justify-content: space-between;
+}
+h5 {
+  font-weight: 200;
+  display: block;
+  font-size: 0.83em;
+  margin-block-start: 1.67em;
+  margin-block-end: 1.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.crypto-data .news .pill {
+  background: rgba(56, 62, 70, 0.4);
+  font-size: 12px !important;
+  text-align: center;
+  border-radius: 2em;
+  color: #fff;
+  padding: 0.25em 1.25em;
+  margin: 1em 0.25em;
+}
+.crypto-data .news small {
+  font-size: 13px !important;
+}
+.crypto-data .news .time-news {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.crypto-data .news small {
+  font-size: 13px !important;
+}
+
+.crypto-data .news a {
+  color: #1f90ff;
+  cursor: pointer;
+  outline: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.crypto-data .news .pill:hover,
+.crypto-data .news a {
+  background: linear-gradient(90deg, #2f84fc, #4dbdf5);
+}
+
+.news {
+  margin: 1em;
+  flex: 43% 1;
+  min-height: 270px;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  display: flex;
+  align-items: center;
+}
+.crypto-data .news h5:hover {
+  background: linear-gradient(90deg, #2f84fc, #4dbdf5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+.crypto-data .news .time-news {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.crypto-data .news .time-news i {
+  margin-right: 0.5em;
+  margin-bottom: 0.15em;
+}
+.crypto-data .news small {
+  font-size: 13px !important;
+}
+.crypto-data .news .meta-news-data {
+  display: flex;
+  justify-content: space-between;
+}
+.crypto-data .news .pill {
+  background: rgba(56, 62, 70, 0.4);
+  font-size: 12px !important;
+  text-align: center;
+  border-radius: 2em;
+  color: #fff;
+  padding: 0.25em 1.25em;
+  margin: 1em 0.25em;
+}
+.crypto-data .news .pill:hover,
+.crypto-data .news a {
+  background: linear-gradient(90deg, #2f84fc, #4dbdf5);
+}
+.crypto-data .news a {
+  color: #1f90ff;
+  cursor: pointer;
+  outline: none;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.crypto-data .news a:hover {
+  text-decoration: none;
+}
+
+.filter-search {
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  color: #dadada;
+  padding: 1.5em 4em;
+  backdrop-filter: blur(5px);
+  -webkit-filter: blur(120%);
+  filter: blur(120%);
+  -moz-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: fixed;
+  z-index: 1000 !important;
+  left: 0;
+  top: 80px;
+  height: 100vh;
+  width: 100vw;
+}
+.filter-search .search-item {
+  padding: 0.75em;
+  display: flex;
+  max-width: 80vw;
+}
