@@ -3,7 +3,10 @@ import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import millify from "millify";
 import { SearchAsset } from "../services/cryptocompareApi";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
+import moment from "moment";
+
 const HomePage = () => {
+  const today = moment(new Date()).format("DD/MM/YYYY");
   const history = useHistory();
   const dispatch = useAppDispatch();
 
@@ -25,8 +28,8 @@ const HomePage = () => {
     <div className="flex flex-wrap">
       <div className="w-full lg:w-8/12 bg-gray-800 py-6 px-6 rounded-3xl">
         <div className="flex justify-between text-white items-center mb-8">
-          <p className="text-2xl font-bold">Crypto</p>
-          <p className="">December, 19</p>
+          <p className="text-2xl font-bold">R-Crypto</p>
+          <p className="">{today}</p>
         </div>
 
         <div className="border rounded-b text-gray-100 divide-y divide-gray-700 border-gray-700">
