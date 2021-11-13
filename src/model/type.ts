@@ -29,6 +29,26 @@ export interface Signal {
   sentiment: Sentiment;
   value: number;
 }
+
+export interface CoinLists {
+  id?: string;
+  symbol?: string;
+  name?: string;
+  nameid?: string;
+  rank?: number;
+  priceUsd?: string;
+  percentChange24H?: string;
+  percentChange1H?: string;
+  percentChange7D?: string;
+  priceBtc?: string;
+  marketCapUsd?: string;
+  volume24?: number;
+  volume24A?: number;
+  csupply?: string;
+  tsupply?: string;
+  msupply?: null | string;
+}
+
 export interface CoinList {
   [x: string]: any;
   id: number;

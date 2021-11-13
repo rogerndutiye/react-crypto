@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { CoinList } from "../../model/type";
+import { CoinLists } from "../../model/type";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 import { cryptoActions } from "../../app/cryptoSlice";
 
@@ -10,7 +10,9 @@ export default function SearchBar() {
   const dispatch = useAppDispatch();
   const [find, setFind] = useState([]);
   const { data } = useGetCryptosQuery(100);
-  const coins: CoinList = data?.data?.coins;
+  const coins: CoinLists = data?.data;
+
+  // console.log(coins);
 
   const { assets, isLoading } = useAppSelector((state) => state.crypto);
   useEffect(() => {

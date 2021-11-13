@@ -33,70 +33,73 @@ const HomePage = () => {
         </div>
 
         <div className="border rounded-b text-gray-100 divide-y divide-gray-700 border-gray-700">
-          {assets?.map(
-            (crypto: {
-              id: string;
-              rank: string;
-              symbol: string;
-              name: string;
-              iconUrl: string;
-              price: number;
-              marketCap: number;
-              change: number;
-            }) => (
-              <div
-                key={crypto.id}
-                className="px-4 py-2 flex items-center justify-between hover:bg-gray-700"
-              >
-                <div className="w-4/12">
-                  <div className="flex items-center space-x-2">
-                    <span>{crypto.rank}.</span>
-                    <span className="text-blue-300">
-                      <img
-                        className="w-5 h-5 rounded-full overflow-hidden object-cover"
-                        src={crypto.iconUrl}
-                        alt={crypto.name}
-                      />
-                    </span>
-                    <Link
-                      to={`/crypto/details`}
-                      onClick={() =>
-                        nextPage(
-                          crypto.symbol,
-                          crypto.name,
-                          crypto.id,
-                          crypto.iconUrl
-                        )
+          {assets &&
+            assets?.map(
+              (crypto: {
+                id: string;
+                rank: string;
+                symbol: string;
+                name: string;
+                iconUrl: string;
+                price_usd: number;
+                market_cap_usd: number;
+                percent_change_1h: number;
+              }) => (
+                <div
+                  key={crypto.id}
+                  className="px-4 py-2 flex items-center justify-between hover:bg-gray-700"
+                >
+                  <div className="w-4/12">
+                    <div className="flex items-center space-x-2">
+                      <span>{crypto.rank}.</span>
+                      <span className="text-blue-300">
+                        <img
+                          className="w-5 h-5 rounded-full overflow-hidden object-cover"
+                          src={crypto.iconUrl}
+                          alt={crypto.name}
+                        />
+                      </span>
+                      <Link
+                        to={`/crypto/details`}
+                        onClick={() =>
+                          nextPage(
+                            crypto.symbol,
+                            crypto.name,
+                            crypto.id,
+                            crypto.iconUrl
+                          )
+                        }
+                        className="hover:underline hover:text-blue-500"
+                      >
+                        {crypto.symbol} - {crypto.name}
+                      </Link>
+                    </div>
+                  </div>
+                  <div className="w-3/12">
+                    <span className="text-gray-600">Price: </span>
+                    {millify(crypto.price_usd)}
+                  </div>
+                  <div className="w-3/12">
+                    <span className="text-gray-600">Market Cap: </span>
+                    {millify(crypto.market_cap_usd)}
+                  </div>
+
+                  <div className="w-2/12 text-right">
+                    <span className="text-gray-600">Daily Change </span>
+                    <br />{" "}
+                    <span
+                      className={
+                        crypto.percent_change_1h < 0
+                          ? "text-red-600"
+                          : "text-green-600"
                       }
-                      className="hover:underline hover:text-blue-500"
                     >
-                      {crypto.symbol} - {crypto.name}
-                    </Link>
+                      {millify(crypto.percent_change_1h)} %
+                    </span>
                   </div>
                 </div>
-                <div className="w-3/12">
-                  <span className="text-gray-600">Price: </span>
-                  {millify(crypto.price)}
-                </div>
-                <div className="w-3/12">
-                  <span className="text-gray-600">Market Cap: </span>
-                  {millify(crypto.marketCap)}
-                </div>
-
-                <div className="w-2/12 text-right">
-                  <span className="text-gray-600">Daily Change </span>
-                  <br />{" "}
-                  <span
-                    className={
-                      crypto.change < 0 ? "text-red-600" : "text-green-600"
-                    }
-                  >
-                    {millify(crypto.change)} %
-                  </span>
-                </div>
-              </div>
-            )
-          )}
+              )
+            )}
         </div>
       </div>
       <div className="w-full mt-8 lg:mt-0 lg:w-4/12 lg:pl-4">

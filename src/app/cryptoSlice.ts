@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../app/store";
 import { Asset } from "../model/Asset";
 import { DailyOHLCV } from "../model/DailyOHLCV";
-import { CoinList } from "../model/type";
+import { CoinLists } from "../model/type";
 
 const initialState: any = {
   price: null,
@@ -37,7 +37,7 @@ export const cryptoSlice = createSlice({
       state.asset = action.payload.data;
       state.isLoading = false;
     },
-    getTopAssets: (state, action: PayloadAction<CoinList>) => {
+    getTopAssets: (state, action: PayloadAction<CoinLists>) => {
       state.assets = action.payload;
       state.isLoading = false;
     },
